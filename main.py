@@ -1,7 +1,9 @@
 import streamlit as st
+import pandas as pd
 
 st.set_page_config(layout="wide")
 
+df = pd.read_csv("data.csv", sep= ";")
 
 col1, col2 = st.columns(2)
 with col1:
@@ -14,4 +16,21 @@ with col2:
     st.info(content)
 
 content2 = "if you need help feel free to contact me...!"
-st.write()
+st.write(content2)
+
+col3, emptycol, col4 = st.columns([3,1,3])
+
+with col3:
+    for index, row in df[:11].iterrows():
+        st.header(row['title'])
+        st.write(row['description'])
+        st.image("images/"+row['image'])
+        st.write(f"[SourceCode]({row['url']})")
+
+with col4:
+    for index, row in df[11:].iterrows():
+        st.header(row['title'])
+        st.write(row['description'])
+        st.image("images/"+row['image'])
+        st.write(f"[SourceCode]({row['url']})")
+
