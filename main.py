@@ -12,3 +12,6 @@ with col2:
     content = """zahra is a fast learner who love new challanges.
     the most interesting thing about her is being happy always, even when she fails..."""
     st.info(content)
+
+content2 = "if you need help feel free to contact me...!"
+st.write()
