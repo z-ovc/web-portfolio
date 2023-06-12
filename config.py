@@ -1,4 +1,5 @@
 import configparser
 
 config = configparser.ConfigParser()
-config.read("web-portfolio/config.txt")
+config.read("config.txt")
+password = config.get('mail','password')
